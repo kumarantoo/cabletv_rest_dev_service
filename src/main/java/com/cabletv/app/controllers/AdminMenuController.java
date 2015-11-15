@@ -29,7 +29,7 @@ import java.io.IOException;
  * @author Kumaran
  */
 public class AdminMenuController implements Initializable {
-
+  
     private Scene scene;
     
     @FXML 
@@ -84,5 +84,14 @@ public class AdminMenuController implements Initializable {
         // TODO
     }    
     
+    
+    /*
+    Method to Add New User 
+    */
+    @FXML
+    public void addAppUsers() {
+       
+         System.out.println("fdsfssf");
+    }
 
 }
