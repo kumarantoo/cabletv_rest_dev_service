@@ -1,5 +1,6 @@
 package com.cabletv.app.Main;
 
+import com.cabletv.app.models.TestSpring;
 import com.cabletv.app.utils.PropertyLoader;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -8,7 +9,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
-
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 /*
 Kumaran
 CopyRight to KumaranTech & Traders
@@ -40,7 +43,15 @@ public class MainApp extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+         ApplicationContext context = new ClassPathXmlApplicationContext("/config/cabletv-springconfig.xml");
+	  
+        TestSpring te  = (TestSpring)context.getBean("testSpr");
+        System.out.println("com.cable"+te.getTestSpring());
         launch(args);
     }
 
+    
+    
+    
 }
