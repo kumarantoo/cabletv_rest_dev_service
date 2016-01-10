@@ -3,9 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package com.cabletv.app.controllers;
+import com.cabletv.app.serviceaccess.CableTvServiceAccess;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+        import org.springframework.beans.factory.annotation.Autowired;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -31,6 +35,9 @@ import java.io.IOException;
 public class AdminMenuController implements Initializable {
   
     private Scene scene;
+    
+    @Autowired
+    private CableTvServiceAccess serviceAccess;
     
     @FXML 
     private Button logoutButton;
@@ -91,6 +98,8 @@ public class AdminMenuController implements Initializable {
     @FXML
     public void addAppUsers() {
        
+        serviceAccess.getAllCust();
+        
          System.out.println("fdsfssf");
     }
 }
