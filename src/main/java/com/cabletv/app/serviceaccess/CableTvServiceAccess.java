@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  *
  * @author Kumaran
  */
-@Component
+@Component("cableTvServiceAccess")
 @PropertySource("classpath:/config/serviceaccess/common_serviceaccess.properties")
 public class CableTvServiceAccess {
     
@@ -26,13 +26,13 @@ public class CableTvServiceAccess {
     private String endpoint;
     
     @Autowired
-    private CustomerService serviceAccessREST;
+    private CustomerService customerService;
     
     public void getAllCust() {
         
         try {
             
-        CustomerServiceResponseList allCustomerList = serviceAccessREST.getAllCustomers();
+        CustomerServiceResponseList allCustomerList = customerService.getAllCustomers();
         
                 
                 } catch(Exception e) {
